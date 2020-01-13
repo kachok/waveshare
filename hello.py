@@ -30,17 +30,11 @@ try:
     font18 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 18)
       
     logging.info("3.read bmp file")
-    HBlackimage = Image.open(os.path.join(picdir, '2in13bc-b.bmp'))
+    HBlackimage = Image.open(os.path.join(picdir, 'hello-gudetama.bmp'))
     HRYimage = Image.open(os.path.join(picdir, 'hello-badge.bmp'))
     epd.display(epd.getbuffer(HBlackimage), epd.getbuffer(HRYimage))
     time.sleep(2)
     
-    logging.info("4.read bmp file on window")
-    blackimage1 = Image.new('1', (epd.height, epd.width), 255)  # 298*126
-    redimage1 = Image.new('1', (epd.height, epd.width), 255)  # 298*126    
-    newimage = Image.open(os.path.join(picdir, '100x100.bmp'))
-    blackimage1.paste(newimage, (10,10))    
-    epd.display(epd.getbuffer(blackimage1), epd.getbuffer(redimage1))
     
     logging.info("Clear...")
     epd.init()
